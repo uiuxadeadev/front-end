@@ -1,0 +1,40 @@
+/* Common */
+#back-to-top {
+  text-align: right;
+  margin: 25px 25px;
+}
+/* Small Screens */
+@media (min-width:320px) {
+  .footer-container {
+    display:flex;
+    flex-direction: row;
+    list-style-type: none;
+  }
+  #footer-item1 {
+    margin:0 auto;
+  }
+  }
+  
+  /* Medium Screens */
+  @media (min-width: 600px) and (max-width:900px) {
+    .footer-container {
+      display:flex;
+      flex-direction: row;
+      list-style-type: none;
+    }
+    #footer-item1 {
+      margin:0 auto;
+    }
+  }
+  
+  /* Large Screens */
+  @media (min-width:901px) {
+    .footer-container {
+      display:flex;
+      flex-direction: row;
+      list-style-type: none;
+    }
+    #footer-item1 {
+      margin:0 auto;
+    }
+  }

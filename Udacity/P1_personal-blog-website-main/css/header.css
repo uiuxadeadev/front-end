@@ -1,0 +1,42 @@
+/* Common */
+
+
+/* Small Screens */
+@media (min-width:320px) {
+    .nav-container {
+        display:flex;
+        flex-direction: row;
+        list-style-type: none;
+        /*position: absolute;
+        right: 10px; */
+    }
+    .nav-item {
+        width: 100px;
+    }
+    }
+    /* Medium Screens */
+    @media (min-width: 600px) and (max-width:900px) {
+        .nav-container {
+            display:flex;
+            flex-direction: row;
+            list-style-type: none;
+            /*position: absolute;
+            right: 10px; */
+        }
+        .nav-item {
+            width: 100px;
+        }
+    }
+    /* Large Screens */
+    @media (min-width:901px) {
+        .nav-container {
+            display:flex;
+            flex-direction: row;
+            list-style-type: none;
+            /*position: absolute;
+            right: 10px; */
+        }
+        .nav-item {
+            width: 100px;
+        }
+    }

@@ -1,0 +1,114 @@
+h1 a {
+    text-decoration: none;
+/*     color: red;*/
+}
+.caption {
+    text-align: center;
+}
+
+/* Small Screens */
+@media (min-width:320px) {
+    #container {
+        display:grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100px 800px 300px 100px;
+        grid-template-areas:
+        "hd"
+        "main"
+        "author"
+        "ft";
+    }
+    #hd {
+        grid-area: hd;
+    }
+    #main {
+        grid-area: main;
+    }
+    #sd1 {
+        grid-area: author;
+    }
+    #ft {
+        grid-area: ft;
+    }
+    .image-set {
+        width: 250px;
+        height: 250px;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+/* Medium Screens */
+@media (min-width: 600px) and (max-width:900px) {
+/*    #container {
+        display:grid;
+        grid-template-columns: 100% 70% 30% 70% 30% 100%;
+        grid-template-rows: 100px 600px 600px 100px;
+        grid-template-areas:
+        "hd hd hd hd hd hd hd hd"
+        "main main main main main main sd1 sd1"
+        "main main main main main main sd2 sd2"
+        "ft ft ft ft ft ft ft ft";
+    }*/
+    #container {
+        display:grid;
+        grid-template-columns: 80% 20%;
+        grid-template-rows: 100px 1100px 100px;
+        grid-template-areas:
+        "hd hd"
+        "main author"
+        "ft ft";
+    }
+    #hd {
+        grid-area: hd;
+    }
+    #main {
+        grid-area: main;
+    }
+    #sd1 {
+        grid-area: author;
+    }
+    #ft {
+        grid-area: ft;
+    }
+
+    .image-set {
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* Large Screens */
+@media (min-width:901px) {
+    #container {
+        display:grid;
+        grid-template-columns: 80% 20%;
+        grid-template-rows: 100px 1100px 100px;
+        grid-template-areas:
+        "hd hd"
+        "main author"
+        "ft ft";
+    }
+    #hd {
+        grid-area: hd;
+    }
+    #main {
+        grid-area: main;
+    }
+    #sd1 {
+        grid-area: author;
+    }
+    #ft {
+        grid-area: ft;
+    }
+
+    .image-set {
+        width: 750px;
+        height: 500px;
+        margin: 0 auto;
+        text-align: center;
+        justify-content: center;
+    }
+}
