@@ -10,7 +10,7 @@ import './styles/header.scss'
 export {
     checkForName,
     handleSubmit
-   }
+}
 console.log(checkForName);
 
 alert("I EXIST")
