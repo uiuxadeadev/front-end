@@ -5,11 +5,9 @@ export function validateURL(url){
         alert('Please input an URL!');
         return false;
     }
-
     if(validate === false){
         alert('Please input an URL starting from http:// or https://');
         return false;
     }
-
     return true;
 }
