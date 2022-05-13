@@ -1,8 +1,7 @@
-import { updateUI } from './js/updateUI'
-import { postURL } from './js/postURL'
 import { setSubmit } from './js/setSubmit'
-
-
+import { postURL } from './js/postURL'
+import { validateURL } from './js/validateURL'
+import { updateUI } from './js/updateUI'
 
 import './styles/resets.scss'
 import './styles/base.scss'
@@ -11,9 +10,9 @@ import './styles/form.scss'
 import './styles/header.scss'
 
 export {
-    checkForName,
-    handleSubmit
+    postURL,
+    validateURL,
+    updateUI
 }
-console.log(checkForName);
 console.log("CHANGE!!");
 setSubmit();
