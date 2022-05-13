@@ -1,20 +1,18 @@
-import { checkForName } from './js/nameChecker'
-import { handleSubmit } from './js/formHandler'
-import { setEvent } from './js/setEvent'
+import { setSubmit } from './js/setSubmit'
+import { postURL } from './js/postURL'
+import { validateURL } from './js/validateURL'
+import { updateUI } from './js/updateUI'
 
 import './styles/resets.scss'
 import './styles/base.scss'
 import './styles/footer.scss'
 import './styles/form.scss'
 import './styles/header.scss'
-// import { setEvent } from '../server/memo'
 
 export {
-    checkForName,
-    handleSubmit
+    postURL,
+    validateURL,
+    updateUI
 }
-console.log(checkForName);
-
-alert("I EXIST")
 console.log("CHANGE!!");
-setEvent();
+setSubmit();
