@@ -17,8 +17,8 @@ app.get('/', function (req, res) {
 })
 
 // designates what port the app will listen to for incoming requests
-app.listen(8085, function () {
-    console.log('Example app listening on port 8085!')
+app.listen(8080, function () {
+    console.log('Example app listening on port 8080!')
 })
 
 app.get('/test', function (req, res) {
@@ -37,9 +37,11 @@ console.log(`Your API key is ${process.env.API_KEY}`);
 
 // POST Route
 app.post('/addData', async function (req, res){
-    const url = `${baseUrl}&key=${apiKey}&url=${req.body.inputURL}&lang=en`;
+    // const inputURL = req.body.inputURL;
+    const inputURL = req.body;
+    console.log("inputURL is " + inputURL);
+    const url = `${baseUrl}&key=${apiKey}&url=${inputURL}&lang=en`;
     console.log(url);
-    console.log("test");//https://www.apple.com/jp/
     const response = await fetch(url);
     try {
         const newData = await response.json();

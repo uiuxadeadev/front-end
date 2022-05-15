@@ -1,10 +1,13 @@
 export async function postURL() {
     // check what text was put into the form field
-    let formText = document.getElementById('text').value
-    alert(formText);
+    let formText = document.getElementById('text').value;
     // const postData = async ( url = '', data = {})=>{
-        // const response = await fetch('http://localhost:8080/addData', {
-        const response = await fetch('/addData', {
+        console.log(formText);
+        const dataObj = {inputText: formText};
+        console.log = ({inputText: formText});
+        console.log = (dataObj);
+        const response = await fetch('http://localhost:8080/addData', {
+        // const response = await fetch('/addData', {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
@@ -12,7 +15,8 @@ export async function postURL() {
         },
          // Body data type must match "Content-Type" header
          //JSONはkeyとvalueで管理する必要がある。
-        body: JSON.stringify({inputURL: formText})
+        body: JSON.stringify(dataObj)
+        // body: JSON.stringify({inputURL: formText})
         });
 
         try {
