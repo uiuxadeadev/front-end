@@ -1,6 +1,8 @@
 // updateUI(res)
 
-const updateUI = async (res) => {
+//resは受け取り側が、どう呼ぶか
+export const updateUI = async (res) => {
+    console.log(res);
     try {
         // Write updated data to DOM elements
         document.getElementById('model').innerHTML = `Model: ${res.model}`;

@@ -7,8 +7,12 @@ export function setSubmit(){
         return;
     };
     // form.addEventListener('submit', function(e) {
-    form.addEventListener('submit', e => {
+        //awaitを使ったのでasyncを所属先であるfunction(e)に記述
+    form.addEventListener('submit', async e => {
         e.preventDefault();
-        Client.postURL();
+
+        //postURLの結果をupdateUIに渡す
+        const resultInput = await Client.postURL();
+        Client.updateUI(resultInput);
     });
 }

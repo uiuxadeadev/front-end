@@ -4,9 +4,8 @@ export async function postURL() {
     // const postData = async ( url = '', data = {})=>{
         console.log(formText);
         const dataObj = {inputText: formText};
-        console.log = ({inputText: formText});
-        console.log = (dataObj);
-        const response = await fetch('http://localhost:8080/addData', {
+        console.log(dataObj);
+        const response = await fetch('http://localhost:8081/addData', {
         // const response = await fetch('/addData', {
         method: 'POST',
         credentials: 'same-origin',
