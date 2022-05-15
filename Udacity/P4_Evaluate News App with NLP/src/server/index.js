@@ -5,6 +5,7 @@ dotenv.config();
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
+const fetch = require('node-fetch');
 const app = express()
 app.use(express.static('dist'))
 
@@ -35,12 +36,14 @@ const baseUrl = 'https://api.meaningcloud.com/sentiment-2.1?key=';
 console.log(`Your API key is ${process.env.API_KEY}`);
 
 // POST Route
-app.post('/addData', function (req, res){
-    const url = `${apiURL}&key=${apiKey}&url=${req.body.url}&lang=en`;
-    const response = await fetch(url)
+app.post('/addData', async function (req, res){
+    const url = `${baseUrl}&key=${apiKey}&url=${req.body.inputURL}&lang=en`;
+    console.log(url);
+    console.log("test");//https://www.apple.com/jp/
+    const response = await fetch(url);
     try {
         const newData = await response.json();
-        console.log(newData);
+        // console.log(newData);
         let nlpEntry = {
             model: newData.model,
             score_tag: newData.score_tag,
@@ -50,6 +53,7 @@ app.post('/addData', function (req, res){
             irony: newData.irony
         };
         projectData = nlpEntry;
+        console.log("projectData exist");
         console.log(projectData);
         res.send(projectData);
     } catch (error) {

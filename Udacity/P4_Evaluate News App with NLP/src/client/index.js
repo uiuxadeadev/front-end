@@ -14,5 +14,4 @@ export {
     validateURL,
     updateUI
 }
-console.log("CHANGE!!");
 setSubmit();
