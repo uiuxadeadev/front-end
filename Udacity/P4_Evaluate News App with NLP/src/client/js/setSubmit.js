@@ -1,5 +1,6 @@
 export function setSubmit(){
-    const form = document.getElementsByTagName('form');
+    // const form = document.getElementsByTagName('form')[0];
+    const form = document.getElementById('form');
     //null return when no form
     if (form === null) {
         alert("no form");
@@ -7,10 +8,7 @@ export function setSubmit(){
     };
     // form.addEventListener('submit', function(e) {
     form.addEventListener('submit', e => {
-        alert("I EXIST before e.prevent");
         e.preventDefault();
-        alert("I EXIST");
-        console.log("I EXIST");
-        postURl();
+        Client.postURL();
     });
 }

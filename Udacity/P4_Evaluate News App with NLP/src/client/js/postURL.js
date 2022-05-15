@@ -1,18 +1,22 @@
-export async function postURL(event) {
-    event.preventDefault()
-
+export async function postURL() {
     // check what text was put into the form field
-    let formText = document.getElementById('name').value
-
-    const postData = async ( url = '', data = {})=>{
-        const response = await fetch(url, {
+    let formText = document.getElementById('text').value;
+    // const postData = async ( url = '', data = {})=>{
+        console.log(formText);
+        const dataObj = {inputText: formText};
+        console.log = ({inputText: formText});
+        console.log = (dataObj);
+        const response = await fetch('http://localhost:8080/addData', {
+        // const response = await fetch('/addData', {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
             'Content-Type': 'application/json',
         },
          // Body data type must match "Content-Type" header
-        body: JSON.stringify(data),
+         //JSONはkeyとvalueで管理する必要がある。
+        body: JSON.stringify(dataObj)
+        // body: JSON.stringify({inputURL: formText})
         });
 
         try {
@@ -22,5 +26,5 @@ export async function postURL(event) {
         }catch(error) {
             console.log("error", error);
         }
-    }
+    // }
 }
