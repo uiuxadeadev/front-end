@@ -1,6 +1,6 @@
 // updateUI(res)
 
-//resは受け取り側が、どう呼ぶか
+//The res is what the recipient calls it.
 export const updateUI = async (res) => {
     console.log(res);
     try {
