@@ -7,8 +7,10 @@ export function setSubmit(){
         return;
     };
     // form.addEventListener('submit', function(e) {
-    form.addEventListener('submit', e => {
+        //async and await
+    form.addEventListener('submit', async e => {
         e.preventDefault();
-        Client.postURL();
+        const resultInput = await Client.postURL();
+        Client.updateUI(resultInput);
     });
 }

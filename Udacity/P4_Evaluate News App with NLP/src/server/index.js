@@ -7,6 +7,10 @@ const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 const fetch = require('node-fetch');
 const app = express()
+
+//http://expressjs.com/ja/api.html#express.json
+//This function is built into Express based on Body-Parser. Data sent by the client can be retrieved and manipulated via req.body.
+app.use(express.json());
 app.use(express.static('dist'))
 
 console.log(__dirname)
@@ -17,8 +21,8 @@ app.get('/', function (req, res) {
 })
 
 // designates what port the app will listen to for incoming requests
-app.listen(8080, function () {
-    console.log('Example app listening on port 8080!')
+app.listen(8081, function () {
+    console.log('Example app listening on port 8081!')
 })
 
 app.get('/test', function (req, res) {
@@ -32,20 +36,17 @@ app.get('/apiData', (req, res)=>{
 
 //API https://learn.meaningcloud.com/developer/sentiment-analysis/2.1/doc/examples
 const apiKey = process.env.API_KEY;
-const baseUrl = 'https://api.meaningcloud.com/sentiment-2.1?key=';
+const baseUrl = 'https://api.meaningcloud.com/sentiment-2.1';
 console.log(`Your API key is ${process.env.API_KEY}`);
 
 // POST Route
 app.post('/addData', async function (req, res){
-    // const inputURL = req.body.inputURL;
-    const inputURL = req.body;
-    console.log("inputURL is " + inputURL);
-    const url = `${baseUrl}&key=${apiKey}&url=${inputURL}&lang=en`;
-    console.log(url);
+    const inputURL = req.body.inputText;
+    const url = `${baseUrl}?key=${apiKey}&url=${inputURL}&lang=en`;
     const response = await fetch(url);
     try {
         const newData = await response.json();
-        // console.log(newData);
+        // console.log(JSON.stringify(newData));
         let nlpEntry = {
             model: newData.model,
             score_tag: newData.score_tag,
@@ -55,7 +56,6 @@ app.post('/addData', async function (req, res){
             irony: newData.irony
         };
         projectData = nlpEntry;
-        console.log("projectData exist");
         console.log(projectData);
         res.send(projectData);
     } catch (error) {
