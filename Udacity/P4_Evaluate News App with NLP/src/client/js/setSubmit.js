@@ -10,6 +10,11 @@ export function setSubmit(){
         //async and await
     form.addEventListener('submit', async e => {
         e.preventDefault();
+        const validatedInput = await Client.validateURL();
+        if (validatedInput === false){
+            return;
+        }
+
         const resultInput = await Client.postURL();
         Client.updateUI(resultInput);
     });
