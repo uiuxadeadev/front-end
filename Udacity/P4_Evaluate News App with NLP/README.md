@@ -46,7 +46,7 @@
   - updateUI.js
 
 - How to run the project in development mode
-    npm run build-dev
+  - npm run build-dev
 
 - How to run the project in production mode
-    npm run build-prod
+  - npm run build-prod
