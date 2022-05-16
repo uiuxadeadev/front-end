@@ -6,7 +6,7 @@ export function setSubmit(){
         alert("no form");
         return;
     };
-    // form.addEventListener('submit', function(e) {
+    // form.addEventListener('submit', async function(e) {
         //async and await
     form.addEventListener('submit', async e => {
         e.preventDefault();
