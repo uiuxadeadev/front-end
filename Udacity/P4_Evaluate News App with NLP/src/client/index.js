@@ -1,4 +1,5 @@
 import { setSubmit } from './js/setSubmit'
+import { setSubmitFromHtml } from './js/setSubmitFromHtml'
 import { postURL } from './js/postURL'
 import { validateURL } from './js/validateURL'
 import { updateUI } from './js/updateUI'
@@ -10,8 +11,9 @@ import './styles/form.scss'
 import './styles/header.scss'
 
 export {
+    setSubmitFromHtml,
     postURL,
     validateURL,
     updateUI
 }
-setSubmit();
+// setSubmit();

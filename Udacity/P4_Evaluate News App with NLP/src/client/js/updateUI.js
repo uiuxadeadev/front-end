@@ -1,7 +1,8 @@
 // updateUI(res)
 
 //The res is what the recipient calls it.
-export const updateUI = async (res) => {
+// export const updateUI = async (res) => {
+export async function updateUI(res){
     console.log(res);
     try {
         // Write updated data to DOM elements

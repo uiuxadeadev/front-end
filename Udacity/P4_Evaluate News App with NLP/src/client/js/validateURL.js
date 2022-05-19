@@ -1,5 +1,5 @@
-export function validateURL(){
-    let inputText = document.getElementById('text').value;
+export function validateURL(inputText){
+    // let inputText = document.getElementById('text').value;
     const rgx = /^(http(s)?:\/\/)/g;
     const validate = rgx.test(inputText);
     if(inputText === ''){
