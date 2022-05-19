@@ -2,6 +2,6 @@
 import { setSubmitFromHtml } from "../src/client/js/setSubmitFromHtml"
 
 describe("Testing the submit functionality", () => {
-    test("Testing the postURL() function", () => {
+    test("Testing the setSubmitFromHtml() function", () => {
     expect(setSubmitFromHtml).toBeDefined();
 })});
