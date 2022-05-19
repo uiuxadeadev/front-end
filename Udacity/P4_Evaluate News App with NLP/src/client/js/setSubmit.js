@@ -6,11 +6,13 @@ export function setSubmit(){
         alert("no form");
         return;
     };
+    //async and await
     // form.addEventListener('submit', async function(e) {
-        //async and await
+    // No need to name them because they won't be reused. So use arrow function
     form.addEventListener('submit', async e => {
         e.preventDefault();
-        const validatedInput = await Client.validateURL();
+        let inputText = document.getElementById('text').value;
+        const validatedInput = await Client.validateURL(inputText);
         if (validatedInput === false){
             return;
         }
