@@ -19,17 +19,17 @@
 
         <main>
             <section>
-                <form id="form">
+                <!-- <form id="form">
                     <input id="text" type="text" name="input" value=""  placeholder="Input text or URL" required>
                     <input type="submit" name="" value="submit">
-                </form>
-        <!--
-            <form class="" onsubmit="return Client.setSubmit(event)">
-                <input id="name" type="text" name="input" value="" onblur="" placeholder="Name">
-                <input type="submit" name="" value="submit" onclick="return Client.setSubmit(event)"
-                    onsubmit="return setSubmit(event)">
+                </form> -->
+
+            <form class="" onsubmit="Client.setSubmitFromHtml(event)">
+                <input id="text" type="text" name="input" value="" onblur="" placeholder="Name">
+                <input type="submit" name="" value="submit" onclick="Client.setSubmitFromHtml(event)"
+                    onsubmit="Client.setSubmitFromHtml(event)">
             </form>
-        -->
+
             </section>
 
             <section>
