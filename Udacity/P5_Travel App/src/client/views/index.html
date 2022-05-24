@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+        <!-- <script type="text/javascript" src="../../../dist/main.js"></script> -->
+    </head>
+
+    <body>
+
+        <header>
+            <div class="">
+                Logo
+            </div>
+            <div class="test2">
+                navigation
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <form id="form">
+                    <input id="text" type="text" name="input" value=""  placeholder="Input text or URL" required>
+                    <input type="submit" name="" value="submit">
+                </form>
+
+            <!-- <form class="" onsubmit="Client.setSubmitFromHtml(event)">
+                <input id="text" type="text" name="input" value="" onblur="" placeholder="Name">
+                <input type="submit" name="" value="submit" onclick="Client.setSubmitFromHtml(event)"
+                    onsubmit="Client.setSubmitFromHtml(event)">
+            </form> -->
+
+            </section>
+
+            <section>
+                <strong class="test">Form Results:</strong>
+                <div id="results">
+                    <p id="model"></p>
+                    <p id="score_tag"></p>
+                    <p id="agreement"></p>
+                    <p id="subjectivity"></p>
+                    <p id="confidence"></p>
+                    <p id="irony"></p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>This is a footer</p>
+        </footer>
+
+        <script>
+            // // Check that service workers are supported
+            // if ('serviceWorker' in navigator) {
+            //     // Use the window load event to keep the page load performant
+            //     window.addEventListener('load', () => {
+            //         navigator.serviceWorker.register('/service-worker.js');
+            //     });
+            // }
+        </script>
+    </body>
+</html>
