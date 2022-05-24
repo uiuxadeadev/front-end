@@ -1,4 +1,4 @@
-# Udacity's project 4: Evaluate News App with NLP
+# Udacity's project 5: Travel App
 
 ## The goal of this project is to practice with:
 
