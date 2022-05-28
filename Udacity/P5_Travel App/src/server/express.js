@@ -10,4 +10,4 @@ app.get('/', (req, res) => {
     res.sendFile('dist/index.html')
 });
 
-module.exports = express;
+module.exports = app;
