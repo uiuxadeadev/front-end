@@ -10,17 +10,20 @@ export async function getGeoData(destination){
         const url = `${baseURl}q=${destination}&maxRows=1&username=${username}`;
         const destinationData = await fetch(url);
         const jsonData = await destinationData.json();
+
+        //What's this?
         const response = jsonData.geonames[0];
 
+        //What's this?
         const resultGeoData = response.data.geonames;
         if (resultGeoData == null) {
-            return res.status(404).json({ Validation: "please input invalid city name" });
+            return res.status(404).json({ Validation: "please input an invalid city name" });
         }
-        return resultGeoData
+        return resultGeoData;
         // if(geoData.length != 0){
         //     return{
-        //         lat: geoData[0].lat,
-        //         lon: geoData[0].lng
+        //         latitude: geoData[0].lat,
+        //         longitude: geoData[0].lng
         //     };
         // }else{
         //     let code = (typeof response.response === 'undefined') ? 400 : response.response.status;

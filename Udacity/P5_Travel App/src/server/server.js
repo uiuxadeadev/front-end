@@ -24,17 +24,16 @@ projectData = {};
 // POST Route
 app.post('/addTrip', async (req, res) => {
     const destination = req.body.city;
+
     try{
         const resultImage = await getImage(destination);
         const resultGeoData = await getGeoData(destination);
         const resultWeather = await getWeather(resultGeoData);
-    // const inputURL = req.body.inputText;
-    // const url = `${baseUrl}?key=${apiKey}&url=${inputURL}&lang=en`;
-    // const response = await fetch(url);
-    // try {
-    //     const newData = await response.json();
-    //     // console.log(JSON.stringify(newData));
-    //     let nlpEntry = {
+        //Should I give "destination" to getWeather?
+        //or should I put "city: name" into resultGeoData?
+        //or should I identify the weather data only based on lat and lon?
+
+        //     let nlpEntry = {
     //         model: newData.model,
     //         score_tag: newData.score_tag,
     //         agreement: newData.agreement,
@@ -42,9 +41,14 @@ app.post('/addTrip', async (req, res) => {
     //         confidence: newData.confidence,
     //         irony: newData.irony
     //     };
-    //     projectData = nlpEntry;
-    //     console.log(projectData);
-    //     res.send(projectData);
+        projectData = {
+            ...resultImage,
+            ...resultGeoData,
+            ...resultWeather
+        }
+        console.log(projectData);
+        res.send(projectData);
+
     } catch (error) {
         console.log("error", error);
         }
