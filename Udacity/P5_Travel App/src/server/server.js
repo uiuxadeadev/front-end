@@ -2,29 +2,18 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-var path = require('path')
-const express = require('express')
+const path = require('path')
+const express = require('./express')
 const mockAPIResponse = require('./mockAPI.js')
 const fetch = require('node-fetch');
 const cors = require('cors')
-const app = express()
 
-
-//http://expressjs.com/ja/api.html#express.json
-//This function is built into Express based on Body-Parser. Data sent by the client can be retrieved and manipulated via req.body.
-app.use(express.json());
-app.use(express.static('dist'))
 // cors is needed to allow requests from another server
 app.use(cors({
     origin: 'http://localhost:8080'
 }))
 
 console.log(__dirname)
-
-app.get('/', function (req, res) {
-    res.sendFile('dist/index.html')
-    //res.sendFile(path.resolve('src/client/views/index.html'))
-})
 
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
