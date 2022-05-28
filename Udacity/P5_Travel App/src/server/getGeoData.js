@@ -1,9 +1,9 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-export async function getCoordinates(destination){
+export async function getGeoData(destination){
     //Call The Geonames Api to get the lat & long data of the destination.
-    const baseURl = 'http://api.geonames.org/searchJSON?'
+    const baseURl = 'http://api.geonames.org/searchJSON?';
     const username = process.env.GEONAMES_USERNAME;
 
     try{

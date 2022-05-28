@@ -24,15 +24,10 @@ projectData = {};
 // POST Route
 app.post('/addTrip', async (req, res) => {
     const destination = req.body.city;
-    const resultGeoData = await getGeoData(destination);
-
-
-
-
-
     try{
-
-
+        const resultImage = await getImage(destination);
+        const resultGeoData = await getGeoData(destination);
+        const resultWeather = await getWeather(resultGeoData);
     // const inputURL = req.body.inputText;
     // const url = `${baseUrl}?key=${apiKey}&url=${inputURL}&lang=en`;
     // const response = await fetch(url);
