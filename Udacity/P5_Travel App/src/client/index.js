@@ -1,5 +1,5 @@
 import { setSubmit } from './js/setSubmit'
-import { postURL } from './js/postURL'
+import { postURL } from './js/postTripData'
 import { validateURL } from './js/validateURL'
 import { updateUI } from './js/updateUI'
 
@@ -15,4 +15,5 @@ export {
     validateURL,
     updateUI
 }
-// setSubmit();
+
+setSubmit();

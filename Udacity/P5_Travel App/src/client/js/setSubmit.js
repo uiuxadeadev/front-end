@@ -1,23 +1,19 @@
 export function setSubmit(){
     // const form = document.getElementsByTagName('form')[0];
     const form = document.getElementById('form');
-    //null return when no form
-    if (form === null) {
-        alert("no form");
-        return;
-    };
+    const tripCity = document.getElementById('where').value;
+    const startDate = document.getElementById('startDate').value;
+    const endDate = document.getElementById('endDate').value;
     //async and await
-    // form.addEventListener('submit', async function(e) {
     // No need to name them because they won't be reused. So use arrow function
     form.addEventListener('submit', async e => {
         e.preventDefault();
-        let inputText = document.getElementById('text').value;
-        const validatedInput = await Client.validateURL(inputText);
-        if (validatedInput === false){
-            return;
+        const tripData = {
+            city: tripCity.value,
+            startDate: startDate.value,
+            endDate: endDate.value
         }
-
-        const resultInput = await Client.postURL();
+        const resultInput = await Client.postTripData(tripData);
         Client.updateUI(resultInput);
     });
 }
