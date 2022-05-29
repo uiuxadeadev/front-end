@@ -1,9 +1,6 @@
-export async function postURL() {
-    // check what text was put into the form field
-    let inputText = document.getElementById('text').value;
-    //JSON must be managed by key and value.
-    const dataObj = {inputText: inputText};
-    const response = await fetch('http://localhost:8081/addData', {
+export async function postTripData(dataObj) {
+
+    const response = await fetch('http://localhost:8081/addTrip', {
     // const response = await fetch('/addData', {
     method: 'POST',
     credentials: 'same-origin',
