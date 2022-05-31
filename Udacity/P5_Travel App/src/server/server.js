@@ -30,7 +30,7 @@ app.post('/addTrip', async (req, res) => {
     const destination = req.body.city;
 
     try{
-        const resultImage = await getImage(destination);
+        // const resultImage = await getImage(destination);
         // const resultGeoData = await getGeoData(destination);
         // console.log(resultGeoData);
         // const resultWeather = await getWeather(resultGeoData);
@@ -48,8 +48,7 @@ app.post('/addTrip', async (req, res) => {
     //         irony: newData.irony
     //     };
         projectData = {
-            ...resultImage
-            // ,
+            // ...resultImage,
             // ...resultGeoData,
             // ...resultWeather
         }
