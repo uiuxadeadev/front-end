@@ -1,7 +1,8 @@
 const dotenv = require('dotenv');
 dotenv.config();
+const fetch = require('node-fetch');
 
-export async function getWeather(resultGeoData){
+module.exports = async function getWeather(resultGeoData){
     //Call The Geonames Api to get the lat & long data of the destination.
     //https://www.weatherbit.io/api/weather-forecast-16-day
     const baseURl = 'https://api.weatherbit.io/v2.0/forecast/daily?';

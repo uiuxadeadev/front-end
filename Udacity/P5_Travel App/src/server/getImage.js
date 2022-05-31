@@ -1,11 +1,14 @@
 const dotenv = require('dotenv');
 dotenv.config();
+const fetch = require('node-fetch');
 
-export async function getImage(destination){
+// export async function getImage(destination){
+module.exports = async function getImage(destination){
     //Call The Geonames Api to get the lat & long data of the destination.
     const baseURl = 'https://pixabay.com/api/?';
     const pixabayAPI = process.env.PIXABAY_APIKEY;
 
+    console.log("getImage ok");
     try{
         const url = `${baseURl}key=${pixabayAPI}&q=${destination}&category=places&orientation=horizontal&image_type=photo`;
         const imageData = await fetch(url);

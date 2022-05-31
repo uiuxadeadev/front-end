@@ -1,5 +1,5 @@
 import { setSubmit } from './js/setSubmit'
-import { postURL } from './js/postTripData'
+import { postTripData } from './js/postTripData'
 import { validateURL } from './js/validateURL'
 import { updateUI } from './js/updateUI'
 
@@ -11,7 +11,7 @@ import './styles/header.scss'
 
 export {
     setSubmit,
-    postURL,
+    postTripData,
     validateURL,
     updateUI
 }
