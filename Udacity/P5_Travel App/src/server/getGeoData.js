@@ -8,14 +8,20 @@ module.exports = async function getGeoData(destination){
     const username = process.env.GEONAMES_USERNAME;
 
     try{
-        const url = `${baseURl}q=${destination}&maxRows=1&username=${username}`;
-    console.log(url);
+        const url = `${baseURl}q=${destination}&maxRows=10&username=${username}`;
+    console.log(url + " url ok");
         const destinationData = await fetch(url);
-        const jsonData = await destinationData.json();
-    console.log(jsonData);
-        //What's this?
+        console.log(destinationData);
+    //     const jsonData = await destinationData.json();
+    // console.log(jsonData + " jsonData ok");
+    const jsonData1 = destinationData.geonames[0];
+
+    // const jsonData1 = destinationData.data.geonames;
+    console.log(jsonData1 + " jsonData1 ok");
+
+    //What's this?
         const response = jsonData.geonames[0];
-    console.log(response);
+    console.log(response + " response ok");
         //What's this?
         const resultGeoData = response.data.geonames;
         if (resultGeoData == null) {

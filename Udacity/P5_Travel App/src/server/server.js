@@ -31,7 +31,7 @@ app.post('/addTrip', async (req, res) => {
 
     try{
         // const resultImage = await getImage(destination);
-        // const resultGeoData = await getGeoData(destination);
+        const resultGeoData = await getGeoData(destination);
         // console.log(resultGeoData);
         // const resultWeather = await getWeather(resultGeoData);
         // console.log(resultWeather);
@@ -49,7 +49,7 @@ app.post('/addTrip', async (req, res) => {
     //     };
         projectData = {
             // ...resultImage,
-            // ...resultGeoData,
+            ...resultGeoData
             // ...resultWeather
         }
         console.log(projectData);

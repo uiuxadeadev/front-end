@@ -4,10 +4,10 @@
 // export const updateUI = async (res) => {
 export async function updateUI(res){
     try {
-        console.log(res.hits[0].largeImageURL);
-        res.photoUrl = res.hits[0].largeImageURL;
-        // res.photoUrl = res.resultImage.hits[0].largeImageURL;
-        document.getElementById('cityImage').src = res.photoUrl;
+        // console.log(res.hits[0].largeImageURL);
+        // res.photoUrl = res.hits[0].largeImageURL;
+        // // res.photoUrl = res.resultImage.hits[0].largeImageURL;
+        // document.getElementById('cityImage').src = res.photoUrl;
 
         // Write updated data to DOM elements
         // document.getElementById('model').innerHTML = `Model: ${res.model}`;
