@@ -1,19 +1,21 @@
 const dotenv = require('dotenv');
 dotenv.config();
+const fetch = require('node-fetch');
 
-export async function getGeoData(destination){
+module.exports = async function getGeoData(destination){
     //Call The Geonames Api to get the lat & long data of the destination.
     const baseURl = 'http://api.geonames.org/searchJSON?';
     const username = process.env.GEONAMES_USERNAME;
 
     try{
         const url = `${baseURl}q=${destination}&maxRows=1&username=${username}`;
+    console.log(url);
         const destinationData = await fetch(url);
         const jsonData = await destinationData.json();
-
+    console.log(jsonData);
         //What's this?
         const response = jsonData.geonames[0];
-
+    console.log(response);
         //What's this?
         const resultGeoData = response.data.geonames;
         if (resultGeoData == null) {
