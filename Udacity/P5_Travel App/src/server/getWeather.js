@@ -5,15 +5,18 @@ const fetch = require('node-fetch');
 module.exports = async function getWeather(resultGeoData){
     //Call The Geonames Api to get the lat & long data of the destination.
     //https://www.weatherbit.io/api/weather-forecast-16-day
-    const baseURl = 'https://api.weatherbit.io/v2.0/forecast/daily?';
-    const weatherAPI = process.env.WEATHERBIT_APIKEY;
-    const url = `${baseURl}key=city=${city}&lat=${resultGeoData.latitude}&lon=${resultGeoData.longitude}&key=${weatherAPI}`;
 
     try{
+        const baseURL = 'https://api.weatherbit.io/v2.0/forecast/daily?';
+        const weatherAPI = process.env.WEATHERBIT_APIKEY;
+        const url = `${baseURL}&lat=${resultGeoData.lat}&lon=${resultGeoData.lng}&key=${weatherAPI}`;
+
         const weatherData = await fetch(url);
         const jsonData = await weatherData.json();
-        const tripStartDate = req.body.value.tripStartDate;
-        const resultWeather = jsonData.data[tripStartDate];
+
+        // const tripStartDate = req.body.value.tripStartDate;
+        // const resultWeather = jsonData.data[tripStartDate];
+        const resultWeather = jsonData.data[0];
 
         return {
             temp: resultWeather.temp, // Average Temperature (default Celcius)

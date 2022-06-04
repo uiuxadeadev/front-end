@@ -17,7 +17,7 @@ app.use(cors({
     origin: 'http://localhost:8080'
 }))
 
-console.log(__dirname)
+console.log(__dirname);
 
 projectData = {};
 
@@ -28,13 +28,12 @@ projectData = {};
 // POST Route
 app.post('/addTrip', async (req, res) => {
     const destination = req.body.city;
-
+console.log(destination);
     try{
-        // const resultImage = await getImage(destination);
+        const resultImage = await getImage(destination);
         const resultGeoData = await getGeoData(destination);
-        // console.log(resultGeoData);
-        // const resultWeather = await getWeather(resultGeoData);
-        // console.log(resultWeather);
+        const resultWeather = await getWeather(resultGeoData);
+
         //Should I give "destination" to getWeather?
         //or should I put "city: name" into resultGeoData?
         //or should I identify the weather data only based on lat and lon?
@@ -49,8 +48,8 @@ app.post('/addTrip', async (req, res) => {
     //     };
         projectData = {
             // ...resultImage,
-            ...resultGeoData
-            // ...resultWeather
+            ...resultGeoData,
+            ...resultWeather
         }
         console.log(projectData);
         res.send(projectData);

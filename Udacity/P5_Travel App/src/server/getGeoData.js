@@ -9,38 +9,22 @@ module.exports = async function getGeoData(destination){
 
     try{
         const url = `${baseURl}q=${destination}&maxRows=10&username=${username}`;
-    console.log(url + " url ok");
-        const destinationData = await fetch(url);
-        console.log(destinationData);
-    //     const jsonData = await destinationData.json();
-    // console.log(jsonData + " jsonData ok");
-    const jsonData1 = destinationData.geonames[0];
+        const response = await fetch(url);
+        const jsonData = await response.json();
 
-    // const jsonData1 = destinationData.data.geonames;
-    console.log(jsonData1 + " jsonData1 ok");
-
-    //What's this?
-        const response = jsonData.geonames[0];
-    console.log(response + " response ok");
-        //What's this?
-        const resultGeoData = response.data.geonames;
-        if (resultGeoData == null) {
-            return res.status(404).json({ Validation: "please input an invalid city name" });
+        if (jsonData == null || jsonData == undefined) {
+            let code = (typeof jsonData.response === 'undefined') ? 400 : jsonData.response.status;
+            let message = jsonData.data.error || 'Invalid city. Please provide a valid city name!';
+            return {
+                code: code ,
+                message: message
+            }
         }
-        return resultGeoData;
-        // if(geoData.length != 0){
-        //     return{
-        //         latitude: geoData[0].lat,
-        //         longitude: geoData[0].lng
-        //     };
-        // }else{
-        //     let code = (typeof response.response === 'undefined') ? 400 : response.response.status;
-        //     let message = response.data.error || 'Invalid city. Please provide a valid city name!';
-        //     return {
-        //         code: code ,
-        //         message: message
-        //     }
-        // }
+
+        return {
+            lat: jsonData.geonames[0].lat,
+            lng: jsonData.geonames[0].lng
+        };
 
     }catch(err){
         throw new Error(`Error has occured:${err}`);
