@@ -15,6 +15,10 @@ export function setSubmit(){
             endDate: endDate
         }
 
+        const resultValidation = Client.validateDate(tripData);
+        if (!resultValidation) {
+            return;
+        }
         const resultInput = await Client.postTripData(tripData);
         Client.updateUI(resultInput);
     });

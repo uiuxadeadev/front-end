@@ -1,6 +1,7 @@
 import { setSubmit } from './js/setSubmit'
+import { remainingDate } from './js/remainingDate'
 import { postTripData } from './js/postTripData'
-import { validateURL } from './js/validateURL'
+import { validateDate } from './js/validateDate'
 import { updateUI } from './js/updateUI'
 
 import './styles/resets.scss'
@@ -11,8 +12,9 @@ import './styles/header.scss'
 
 export {
     setSubmit,
+    remainingDate,
     postTripData,
-    validateURL,
+    validateDate,
     updateUI
 }
 
