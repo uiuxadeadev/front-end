@@ -34,18 +34,6 @@ app.post('/addTrip', async (req, res) => {
         const resultGeoData = await getGeoData(destination);
         const resultWeather = await getWeather(resultGeoData);
 
-        //Should I give "destination" to getWeather?
-        //or should I put "city: name" into resultGeoData?
-        //or should I identify the weather data only based on lat and lon?
-
-        //     let nlpEntry = {
-    //         model: newData.model,
-    //         score_tag: newData.score_tag,
-    //         agreement: newData.agreement,
-    //         subjectivity: newData.subjectivity,
-    //         confidence: newData.confidence,
-    //         irony: newData.irony
-    //     };
         projectData = {
             ...req.body,
             ...resultImage,

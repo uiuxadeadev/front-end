@@ -3,7 +3,6 @@ export function remove(){
 
     remove.addEventListener('click', (e) => {
         e.preventDefault();
-alert("alert ok");
         document.getElementById('cityName').innerHTML = "";
         document.getElementById('cityImage').src = "";
         document.getElementById('daysLeft').innerHTML = "";
