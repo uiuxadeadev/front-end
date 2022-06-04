@@ -28,7 +28,7 @@ projectData = {};
 // POST Route
 app.post('/addTrip', async (req, res) => {
     const destination = req.body.city;
-console.log(destination);
+
     try{
         const resultImage = await getImage(destination);
         const resultGeoData = await getGeoData(destination);
@@ -47,7 +47,8 @@ console.log(destination);
     //         irony: newData.irony
     //     };
         projectData = {
-            // ...resultImage,
+            ...req.body,
+            ...resultImage,
             ...resultGeoData,
             ...resultWeather
         }

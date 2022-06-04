@@ -1,6 +1,0 @@
-currentDate
-
-startDate
-
-
-currentDate - startDate

@@ -4,14 +4,17 @@
 // export const updateUI = async (res) => {
 export async function updateUI(res){
     try {
-        // console.log(res.hits[0].largeImageURL);
-        // res.photoUrl = res.hits[0].largeImageURL;
-        // // res.photoUrl = res.resultImage.hits[0].largeImageURL;
-        // document.getElementById('cityImage').src = res.photoUrl;
+        // document.getElementById('cityName').innerHTML = `weather description: ${tripData.city}`;
+        document.getElementById('cityName').innerHTML = `Trip to ${res.city}`;
+
+        document.getElementById('cityImage').src = `${res.img}`;
+
+        let remainingDate = Client.remainingDate(res.startDate);
+        document.getElementById('daysLeft').innerHTML = remainingDate;
 
         document.getElementById('weatherDesc').innerHTML = `weather description: ${res.weather_desc}`;
-        document.getElementById('weatherDesc').innerHTML = `max temp: ${res.app_max_temp}`;
-        document.getElementById('weatherDesc').innerHTML = `min temp: ${res.app_min_temp}`;
+        document.getElementById('maxTemp').innerHTML = `max temp: ${res.app_max_temp}`;
+        document.getElementById('minTemp').innerHTML = `min temp: ${res.app_min_temp}`;
 
         // Write updated data to DOM elements
         // document.getElementById('model').innerHTML = `Model: ${res.model}`;

@@ -15,6 +15,13 @@ export function setSubmit(){
             endDate: endDate
         }
 
+        const resultValidation = Client.validateDate(tripData);
+
+        // if (!resultValidation) { Why can't I write like this?
+        if (resultValidation == false) {
+            return;
+        }
+
         const resultInput = await Client.postTripData(tripData);
         Client.updateUI(resultInput);
     });
