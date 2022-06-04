@@ -1,0 +1,6 @@
+currentDate
+
+startDate
+
+
+currentDate - startDate

@@ -9,6 +9,10 @@ export async function updateUI(res){
         // // res.photoUrl = res.resultImage.hits[0].largeImageURL;
         // document.getElementById('cityImage').src = res.photoUrl;
 
+        document.getElementById('weatherDesc').innerHTML = `weather description: ${res.weather_desc}`;
+        document.getElementById('weatherDesc').innerHTML = `max temp: ${res.app_max_temp}`;
+        document.getElementById('weatherDesc').innerHTML = `min temp: ${res.app_min_temp}`;
+
         // Write updated data to DOM elements
         // document.getElementById('model').innerHTML = `Model: ${res.model}`;
         // document.getElementById('score_tag').innerHTML = `Score Tag: ${res.score_tag}`;
