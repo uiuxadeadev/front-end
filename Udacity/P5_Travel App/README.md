@@ -1,5 +1,5 @@
 # Udacity's project 5: Travel App
-
+You can see a picture, weather, temperature of your destination.
 ## The goal of this project is to practice with:
 
 - Setting up Webpack
@@ -7,7 +7,10 @@
 - Webpack Loaders and Plugins
 - Creating layouts and page design
 - Service workers
-- Using APIs and creating requests to external urls
+- Using 3APIs and creating requests to external urls
+http://www.geonames.org/export/web-services.html
+https://www.weatherbit.io/account/dashboard
+https://pixabay.com/api/docs/#api_search_images
 
 ## Getting started
 
@@ -33,16 +36,11 @@
   - "webpack-dev-server": "^3.11.2",
   - "workbox-webpack-plugin": "^6.1.5"
 
-- References that you have used
-    - http://expressjs.com/ja/api.html#express.json
-
-    - https://learn.meaningcloud.com/developer/sentiment-analysis/2.1/doc/examples
-
 - Brief about important files in your project
 
   - setSubmit.js
-  - validateURL.js
-  - postURL.js
+  - validateDate.js
+  - postTripDate.js
   - updateUI.js
 
 - How to run the project in development mode
@@ -50,3 +48,14 @@
 
 - How to run the project in production mode
   - npm run build-prod
+
+## Installation
+
+- Create a .env file to store API keys
+  - Configure your local environment
+    - GEONAMES_USERNAME=
+    - WEATHERBIT_APIKEY=
+    - PIXABAY_APIKEY=
+- Use npm install to install all dependencies
+- Use npm run build-dev to create dist folder
+- Start server by running npm start
