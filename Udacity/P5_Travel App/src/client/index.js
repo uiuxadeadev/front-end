@@ -8,6 +8,8 @@ import { remove } from './js/remove'
 import './styles/resets.scss'
 import './styles/base.scss'
 import './styles/footer.scss'
+import './styles/result.scss'
+import './styles/main.scss'
 import './styles/form.scss'
 import './styles/header.scss'
 

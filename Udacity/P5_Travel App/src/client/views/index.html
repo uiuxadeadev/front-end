@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Travel Planner</title>
         <!-- <script type="text/javascript" src="../../../dist/main.js"></script> -->
     </head>
@@ -17,26 +18,26 @@
         </header>
 
         <main>
-            <section>
+            <section class="container">
+                <h1>Plan a new trip</h1>
                 <form id="form">
                     <fieldset>
-                        <legend>Plan a new trip</legend>
-                        <div>
+                        <div class="inputBox">
                             <label for="where">Where</label>
                             <input type="text" id="where" type="text" name="input" value="" placeholder="Search destinations" required>
                         </div>
 
-                        <div>
+                        <div class="inputBox cal">
                             <label for="startDate">Start date</label>
-                            <input type="date" id="startDate" name="trip-start" value="" min="2022-05-01" placeholder="Add dates" required>
+                            <input type="date" class="cal" id="startDate" name="trip-start" value="" min="2022-05-01" placeholder="Add dates" required>
                         </div>
 
-                        <div>
+                        <div class="inputBox cal">
                             <label for="endDate">End date</label>
-                            <input type="date" id="endDate" name="trip-end" value="" min="2022-05-01" placeholder="Add dates" required>
+                            <input type="date" class="cal" id="endDate" name="trip-end" value="" min="2022-05-01" placeholder="Add dates" required>
                         </div>
 
-                        <div>
+                        <div class="inputBox">
                             <label for="who">Who</label>
                             <input type="text" id="who" value="" placeholder="Add guests">
                             <!-- <select name="prefecture">
@@ -47,8 +48,8 @@
                             </select> -->
                         </div>
 
-                        <div>
-                            <input type="submit" name="" value="search">
+                        <div class="inputBox">
+                            <input type="submit" id="searchBtn"name="" value="search">
                         </div>
                     </fieldset>
                 </form>
@@ -66,36 +67,38 @@
                 </div>
             </section>
 
-            <section>
-                <strong class="test">Form Results:</strong>
-
-                <div id="tripTitle">
-                    <p id="cityName"></p>
-                </div>
-
+            <section class="resultContainer">
+               <section class="cityImage">
                 <div class="city">
                     <img id="cityImage">
                 </div>
+               </section>
 
-                <div id="Itinerary">
-                    <p id="">Itinerary</p>
-                    <span id="daysLeft"></span>
-                </div>
-
-                <div>
-                    <p id="">Weather</p>
-                    <div class="weatherDesc">
-                        <P id="weatherDesc"></P>
+               <section class="resultDescription">
+                    <div id="tripTitle">
+                        <p id="cityName"></p>
                     </div>
-
-                    <div class="maxTemp">
-                        <p id="maxTemp"></P>
+    
+                    <div id="Itinerary">
+                        <p id="">Itinerary</p>
+                        <span id="daysLeft"></span>
                     </div>
-                    <div class="minTemp">
-                        <p id="minTemp"></P>
+    
+                    <div>
+                        <p id="">Weather</p>
+                        <div class="weatherDesc">
+                            <P id="weatherDesc"></P>
+                        </div>
+    
+                        <div class="maxTemp">
+                            <p id="maxTemp"></P>
+                        </div>
+                        <div class="minTemp">
+                            <p id="minTemp"></P>
+                        </div>
                     </div>
-                </div>
-
+    
+                </section>
             </section>
         </main>
 
@@ -104,13 +107,13 @@
         </footer>
 
         <script>
-            // // Check that service workers are supported
-            // if ('serviceWorker' in navigator) {
-            //     // Use the window load event to keep the page load performant
-            //     window.addEventListener('load', () => {
-            //         navigator.serviceWorker.register('/service-worker.js');
-            //     });
-            // }
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
         </script>
     </body>
 </html>
