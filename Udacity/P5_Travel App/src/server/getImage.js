@@ -14,8 +14,13 @@ module.exports = async function getImage(destination){
     try{
         const url = `${baseURl}key=${pixabayAPI}&q=${destination}&category=places&orientation=horizontal&image_type=photo`;
         const imageData = await fetch(url);
-        const resultImage = await imageData.json();
-        return resultImage;
+        const jsonImage = await imageData.json();
+        const resultImage = jsonImage.hits[0].largeImageURL;
+
+
+        return {
+            img: resultImage
+        };
         // const imageData = image.data.hits[0] || '';
         // return {
         //    img: imageData.webformatURL || ''
