@@ -16,7 +16,6 @@ export function setSubmit(){
         }
 
         const resultValidation = Client.validateDate(tripData);
-
         // if (!resultValidation) { Why can't I write like this?
         if (resultValidation == false) {
             return;

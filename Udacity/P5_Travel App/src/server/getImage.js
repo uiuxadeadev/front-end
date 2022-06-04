@@ -17,7 +17,6 @@ module.exports = async function getImage(destination){
         const jsonImage = await imageData.json();
         const resultImage = jsonImage.hits[0].largeImageURL;
 
-
         return {
             img: resultImage
         };
@@ -25,9 +24,6 @@ module.exports = async function getImage(destination){
         // return {
         //    img: imageData.webformatURL || ''
         // }
-
-        // const jsonData = await destinationData.json();
-        // const response = jsonData.geonames[0];
 
         // const resultGeoData = response.data.geonames;
         // if (resultGeoData == null) {

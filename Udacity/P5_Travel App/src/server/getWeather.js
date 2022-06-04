@@ -13,10 +13,10 @@ module.exports = async function getWeather(resultGeoData){
 
         const weatherData = await fetch(url);
         const jsonData = await weatherData.json();
-
+        const resultWeather = jsonData.data[0];
         // const tripStartDate = req.body.value.tripStartDate;
         // const resultWeather = jsonData.data[tripStartDate];
-        const resultWeather = jsonData.data[0];
+
 
         return {
             temp: resultWeather.temp, // Average Temperature (default Celcius)
