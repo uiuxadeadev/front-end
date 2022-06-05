@@ -4,6 +4,8 @@ import { postTripData } from './js/postTripData'
 import { validateDate } from './js/validateDate'
 import { updateUI } from './js/updateUI'
 import { remove } from './js/remove'
+import { dateUtility } from './js/dateUtility'
+
 
 import './styles/resets.scss'
 import './styles/base.scss'
@@ -19,7 +21,8 @@ export {
     postTripData,
     validateDate,
     updateUI,
-    remove
+    remove,
+    dateUtility
 }
 
 setSubmit();
