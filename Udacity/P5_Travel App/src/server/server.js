@@ -34,6 +34,11 @@ app.post('/addTrip', async (req, res) => {
         const resultGeoData = await getGeoData(destination);
         const resultWeather = await getWeather(resultGeoData);
 
+        if(resultGeoData.code){
+            projectData = {...response};
+            res.send(projectData);
+        }
+
         projectData = {
             ...req.body,
             ...resultImage,
