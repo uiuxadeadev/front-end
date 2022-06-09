@@ -4,7 +4,7 @@ import { postTripData } from './js/postTripData'
 import { validateDate } from './js/validateDate'
 import { updateUI } from './js/updateUI'
 import { remove } from './js/remove'
-import { dateUtility } from './js/dateUtility'
+import { getDiffrenceDateCountFromToday } from './js/dateUtility'
 
 
 import './styles/resets.scss'
@@ -22,7 +22,7 @@ export {
     validateDate,
     updateUI,
     remove,
-    dateUtility
+    getDiffrenceDateCountFromToday
 }
 
 setSubmit();
