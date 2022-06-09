@@ -1,3 +1,4 @@
+// import { scrollActive } from './scrollActive.js'
 /**
  *
  * Manipulating the DOM exercise.
@@ -10,24 +11,6 @@
  * JS Version: ES2015/ES6
  *
  * JS Standard: ESlint
- *
- */
-
-
-/**
- * Define Global Variables
- *
- */
-
-/**
- * End Global Variables
- * Start Helper Functions
- *
- */
-
-/**
- * End Helper Functions
- * Begin Main Functions
  *
  */
 
@@ -113,6 +96,7 @@ window.addEventListener('scroll', function() {
     scrollActive();
 });
 
+//https://pupli.net/2019/12/detecting-when-user-stopped-scrolling/
 function scrollActive() {
     //e.preventDefault();
     const sections = Array.from(document.getElementsByTagName('section'));
